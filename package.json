@@ -1,6 +1,6 @@
 {
   "name": "prismjs-themes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "PrismJS themes",
   "repository": {
     "type": "git",
@@ -12,14 +12,23 @@
   ],
   "author": {
     "name": "Allan Moreno",
-    "username": "heyallan",
-    "twitter": "heyallanmoreno"
+    "email": "hello@heyallan.com",
+    "twitter": {
+      "username": "heyallanmoreno",
+      "url": "https://twitter.com/heyallanmoreno"
+    }
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/heyallan/prismjs-themes/issues"
   },
-  "homepage": "https://heyallan.github.io/prismjs-themes",
+  "repo": {
+    "url": "https://github.com/heyallan/prismjs-themes"
+  },
+  "demo": {
+    "url": "https://heyallan.github.io/prismjs-themes"
+  },
+  "homepage": "https://github.com/heyallan/prismjs-themes#readme",
   "devDependencies": {
     "autoprefixer": "^6.4.1",
     "gulp": "^3.9.1",
