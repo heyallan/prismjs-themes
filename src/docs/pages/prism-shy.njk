@@ -1,0 +1,94 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+  <div id="top" role="document">
+
+    {% include "header.njk" %}
+
+    {% include "nav-demos.njk" %}
+
+    <main role="main">
+      <article>
+
+        {# prismJS #}
+        <link rel="stylesheet" href="coy.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-php.js"></script>
+        {# prismJS #}
+
+        <section>
+          <h3>Markup</h3>
+          <p><code class="language-markup">&lt;p class="lead"&gt;The quick brown fox…&lt;/p&gt;</code></p>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Page title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div role="document"&gt;
+      &lt;p class="lead"&gt;The quick brown fox jumps over the lazy designer&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section>
+          <h3>CSS</h3>
+          <p><code class="language-css">.animated { animation-duration: 1s; }</code></p>
+<pre><code class="language-css">/* css rule sets */
+@import  "hyper-reset.min.css";
+
+body, .module, #widget {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  width: calc(100% - 5px);
+  color: #992255;
+}
+@media (max-width: 1200px) {
+	.module {
+		 background-image: url("assets/img/photo.png");
+     background-size: cover;
+	}
+}</code></pre>
+        </section>
+
+        <section>
+          <h3>JavaScript</h3>
+          <p><code class="language-javascript">var program = function(run) { this.run = run; }</code></p>
+<pre><code class="language-javascript">// default task
+gulp.task("docs", function() {
+  return gulp.src("src/docs/pages/*.njk")
+    .pipe(nunjucks({
+      path: "src/docs/partials/",
+      data: { package: pkgFile }
+    }))
+    .pipe(gulp.dest("docs/"));
+})</code></pre>
+        </section>
+
+        <section>
+          <h3>PHP</h3>
+          <p><code class="language-php">&lt;?php echo $page->text()->html() ?&gt;</code></p>
+<pre><code class="language-php">// plugins/user/user.php
+&lt;?php snippet("header") ?&gt;
+
+&lt;?php if($site-&gt;user()->popular()): ?&gt;
+  &lt;a href="&lt;?php echo $site->twitter() ?>"&gt;Twitter&lt;/a&gt;
+  &lt;a href="&lt;?php echo $site->facebook() ?>"&gt;Facebook&lt;/a&gt;
+&lt;?php endif ?&gt;
+
+&lt;?php snippet("footer") ?&gt;</code></pre>
+        </section>
+      </article>
+      <footer>
+        <hr>
+        <p>
+          <a href="https://twitter.com/intent/tweet/?&text={{ package.description | urlencode }}%20»&url={{ package.homepage }}&via={{ package.author.twitter }}"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social&maxAge=2592000" alt="Tweet this" /></a>
+          <a href="{{ package.repository.home }}"><img src="https://img.shields.io/github/stars/heyallan/{{ package.name }}.svg?style=social&label=Stars&maxAge=2592000" alt="Fork me on GitHub" /></a>
+        </p>
+      </footer>
+    </main><!-- role main -->
+  </div><!-- role document  -->
+
+{% endblock %}

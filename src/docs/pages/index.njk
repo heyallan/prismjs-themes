@@ -1,0 +1,45 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+  <div id="top" role="document">
+
+    {% include "header.njk" %}
+
+    <main role="main">
+      <article>
+        <p><b>{{ package.description }}</b></p>
+      </article>
+      <article>
+
+        {# prismJS #}
+        <link rel="stylesheet" href="coy.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-php.js"></script>
+        {# prismJS #}
+
+        <section>
+          <h2>Installation</h2>
+<p><strong>Download</strong></p>
+<pre>https://unpkg.com/{{ package.name }}/dist/{% raw %}{{{% endraw %} theme_name {% raw %}}}{% endraw %}.min.css</pre>
+<p><strong>CDN Development (always latest)</strong></p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/{{ package.name }}/dist/{% raw %}{{{% endraw %} theme_name {% raw %}}}{% endraw %}.min.css&quot;/&gt;</code></pre>
+<p><strong>CDN Production (specific release)</strong></p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/{{ package.name }}@{{ package.version }}/dist/{% raw %}{{{% endraw %} theme_name {% raw %}}}{% endraw %}.min.css&quot;/&gt;</code></pre>
+<p><strong>NPM package</strong></p>
+<pre><code>$ npm install --save-dev {{ package.name }}</code></pre>
+<p><strong>CSS import</strong></p>
+<pre><code>@import url(&quot;https://unpkg.com/{{ package.name }}@{{ package.version }}/dist/{% raw %}{{{% endraw %} theme_name {% raw %}}}{% endraw %}.min.css&quot;);</code></pre>
+        </section>
+      </article>
+      <footer>
+        <hr>
+        <p>
+          <a href="https://twitter.com/intent/tweet/?&text={{ package.description | urlencode }}%20»&url={{ package.homepage }}&via={{ package.author.twitter }}"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social&maxAge=2592000" alt="Tweet this" /></a>
+          <a href="{{ package.repository.home }}"><img src="https://img.shields.io/github/stars/heyallan/{{ package.name }}.svg?style=social&label=Stars&maxAge=2592000" alt="Fork me on GitHub" /></a>
+        </p>
+      </footer>
+    </main><!-- role main -->
+  </div><!-- role document  -->
+
+{% endblock %}
