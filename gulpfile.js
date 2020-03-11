@@ -27,7 +27,7 @@ gulp.task('docs', function() {
   return gulp.src('src/docs/pages/*.njk')
     .pipe(nunjucks({
       path: 'src/docs/partials/',
-      data: {package: pkgFile}
+      data: { package: pkgFile }
     }))
     .pipe(gulp.dest('docs/'));
 })

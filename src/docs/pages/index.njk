@@ -12,30 +12,19 @@
       </article>
       <article>
 
-        {# prismJS #}
-        <link rel="stylesheet" href="coy.min.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-php.js"></script>
-        {# prismJS #}
-
         <section>
           <h2>Installation</h2>
-<p><strong>Download</strong></p>
-<pre>https://unpkg.com/{{ package.name }}/dist/{% raw %}{{{% endraw %} theme_name {% raw %}}}{% endraw %}.min.css</pre>
-<p><strong>CDN Development (always latest)</strong></p>
+<p>CDN Development (redirect to latest)</p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/{{ package.name }}/dist/{% raw %}{{{% endraw %} theme_name {% raw %}}}{% endraw %}.min.css&quot;/&gt;</code></pre>
-<p><strong>CDN Production (specific release)</strong></p>
+<p>CDN Production (specific release)</p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/{{ package.name }}@{{ package.version }}/dist/{% raw %}{{{% endraw %} theme_name {% raw %}}}{% endraw %}.min.css&quot;/&gt;</code></pre>
-<p><strong>NPM package</strong></p>
+<p>NPM package</p>
 <pre><code>$ npm install --save-dev {{ package.name }}</code></pre>
-<p><strong>CSS import</strong></p>
+<p>CSS import</p>
 <pre><code>@import url(&quot;https://unpkg.com/{{ package.name }}@{{ package.version }}/dist/{% raw %}{{{% endraw %} theme_name {% raw %}}}{% endraw %}.min.css&quot;);</code></pre>
         </section>
       </article>
-      <footer>
-        <hr>
-        <p>{% include "share.njk" %}</p>
-      </footer>
+      <hr>
     </main><!-- role main -->
   </div><!-- role document  -->
 

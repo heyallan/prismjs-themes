@@ -2,9 +2,6 @@
 
 > Prism JS Themes
 
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
-[![Support](https://img.shields.io/badge/_Support-❤︎_Development-9b59b6.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MAURFPVLDCF64)
-
 ## Docs
 
 Visit the project website to see demo or documentation

@@ -1,5 +1,9 @@
 {% extends "base.njk" %}
 
+{% block theme %}
+  <link rel="stylesheet" href="midnight.min.css" />
+{% endblock %}
+
 {% block content %}
 
   <div id="top" role="document">
@@ -10,13 +14,6 @@
 
     <main role="main">
       <article>
-
-        {# prismJS #}
-        <link rel="stylesheet" href="midnight.min.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-php.js"></script>
-        {# prismJS #}
-
         <section>
           <h3>Markup</h3>
           <p><code class="language-markup">&lt;p class="lead"&gt;The quick brown fox…&lt;/p&gt;</code></p>
@@ -81,10 +78,6 @@ gulp.task("docs", function() {
 &lt;?php snippet("footer") ?&gt;</code></pre>
         </section>
       </article>
-      <footer>
-        <hr>
-        <p>{% include "share.njk" %}</p>
-      </footer>
     </main><!-- role main -->
   </div><!-- role document  -->
 
